@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Basic meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Page title -->
+    <title>Parker's Blog</title>
+
+    <!-- Tailwind CSS from CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts - Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Custom styles -->
+    <style>
+        /* Set default font family */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+        }
+
+        /* Style blog post content */
+        .prose {
+            max-width: 65ch;
+            margin: 0 auto;
+        }
+
+        .prose p {
+            margin-bottom: 1.5em;
+            line-height: 1.8;
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+    <!-- Navigation bar -->
+    <nav class="bg-white shadow-sm">
+        <div class="max-w-4xl mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <!-- Site logo/name -->
+                <a href="/" class="text-xl font-bold text-gray-800">Parker's Blog</a>
+
+                <!-- Navigation links -->
+                <div class="space-x-6">
+                    <a href="/" class="text-gray-600 hover:text-gray-900 transition-colors duration-200">Home</a>
+                    <a href="https://github.com/your-github" class="text-gray-600 hover:text-gray-900 transition-colors duration-200">GitHub</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main content area - This is where child templates will insert their content -->
+    <main class="py-8">
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-50 border-t border-gray-200 mt-12">
+        <div class="max-w-4xl mx-auto px-4 py-6">
+            <p class="text-center text-gray-600">
+                © {{ current_year }} Parker's Blog. All rights reserved.
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
